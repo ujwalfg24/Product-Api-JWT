@@ -3,11 +3,11 @@
 const bcrypt = require("bcrypt");
 const User = require("../model/user");
 //const Product =require("../model/product")
-const jwt =require('jsonwebtoken');
+const jwt =require('jsonwebtoken');  
 
   
 
-
+var a = "demo";
 
 
 
