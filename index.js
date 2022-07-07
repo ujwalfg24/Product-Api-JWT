@@ -8,13 +8,14 @@ const cors =require('cors')
 const router = require("./routes/route");
 const bodyParser =require('body-parser')
 const productRouter =require("./routes/productRoute")
-
+const customerRouter =require('./routes/customerRoute')
 
 app.use(cors())
 app.use(bodyParser.json()); 
 
 app.use(express.urlencoded({ extended: false }))
 app.use('/user',router)
+app.use('/customer',customerRouter)
 app.use('/product',productRouter) 
 PORT=process.env.PORT||5000;
 

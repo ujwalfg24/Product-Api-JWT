@@ -30,6 +30,23 @@ const path =require('path')
   } ;
 
  const createProduct =  (req, res, next) => {
+    jwt.verify(req.headers.authorization , "secretkey",(err, authData) => {
+        if(err) {
+          console.log(err)
+          return res.sendStatus(403)
+        } 
+        else {
+        return res.send({
+            message: 'Product list',authData
+        }
+        )}
+         
+        })
+
+
+
+
+
     const image = req.file.path
    
     const newProduct = Product({
@@ -48,6 +65,25 @@ const path =require('path')
 };
 
  const getProduct = (req, res, next) => {
+
+    jwt.verify(req.headers.authorization , "secretkey",(err, authData) => {
+        if(err) {
+          console.log(err)
+          return res.sendStatus(403)
+        } 
+        else {
+        return res.send({
+            message: 'Product list',authData
+        }
+        )}
+         
+        })
+
+
+
+
+
+
     const id = req.params.id;
     Product.findById(id).then((product) => {
        res.send(product);
@@ -55,6 +91,27 @@ const path =require('path')
 };
 
  const deleteProduct = (req, res, next) => {
+    jwt.verify(req.headers.authorization , "secretkey",(err, authData) => {
+        if(err) {
+          console.log(err)
+          return res.sendStatus(403)
+        } 
+        else {
+        return res.send({
+            message: 'Product list',authData
+        }
+        )}
+         
+        })
+
+
+
+
+
+
+
+
+
     const id = req.params.id;
     Product.findById(id)
         .then((product) => {
@@ -67,6 +124,23 @@ const path =require('path')
 };
 
  const updateProduct = (req, res, next) => {
+  
+    jwt.verify(req.headers.authorization , "secretkey",(err, authData) => {
+        if(err) {
+          console.log(err)
+          return res.sendStatus(403)
+        } 
+        else {
+        return res.send({
+            message: 'Product list',authData
+        }
+        )}
+         
+        })
+
+
+
+
     const id = req.params.id;
     Product.findById(id).then((_product) => {
         Product.updateOne(

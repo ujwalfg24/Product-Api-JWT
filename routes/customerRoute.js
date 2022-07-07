@@ -1,9 +1,7 @@
-
-
 const express = require("express");
 const router = express.Router()
 
-const {postLogin,postRegister} = require('../controller/admincontrollers')
+const {postLogin,postRegister} = require('../controller/controllers.js')
 
 
 
