@@ -76,11 +76,6 @@ const path =require('path')
          
         })
 
-
-
-
-
-
     const id = req.params.id;
     Product.findById(id).then((product) => {
        res.send(product);
@@ -95,18 +90,11 @@ const path =require('path')
         } 
         else {
         return res.send({
-            message: 'Product list',authData
+            message: 'Product deleted',authData
         }
         )}
          
         })
-
-
-
-
-
-
-
 
 
     const id = req.params.id;
@@ -129,14 +117,11 @@ const path =require('path')
         } 
         else {
         return res.send({
-            message: 'Product list',authData
+            message: 'Product updated',authData
         }
         )}
          
         })
-
-
-
 
     const id = req.params.id;
     Product.findById(id).then((_product) => {
