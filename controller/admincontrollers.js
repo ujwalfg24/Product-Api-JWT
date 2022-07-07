@@ -5,14 +5,6 @@ const User = require("../model/user");
 const jwt =require('jsonwebtoken');  
 
   
-
-
-
-
-
-
-
-
 const postLogin = async (req, res, next) => { try {
     const { email, password } = req.body;
 
@@ -27,7 +19,6 @@ const postLogin = async (req, res, next) => { try {
         res.json({ message: "Password not matched" });
     }
     
- 
 }
 catch (err){
     console.log(err);

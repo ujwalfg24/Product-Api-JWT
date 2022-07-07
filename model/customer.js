@@ -14,18 +14,10 @@ const customerSchema = new mongoose.Schema({
                type:String,
                required:true
           },
-          passsword:{
+          password:{
             type:String,
             required:true
           }
-
-      
-
-
-
-
-
-
 
 })
 

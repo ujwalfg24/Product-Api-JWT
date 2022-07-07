@@ -37,14 +37,11 @@ const path =require('path')
         } 
         else {
         return res.send({
-            message: 'Product list',authData
+            message: `product added`,authData
         }
         )}
          
         })
-
-
-
 
 
     const image = req.file.path
@@ -73,7 +70,7 @@ const path =require('path')
         } 
         else {
         return res.send({
-            message: 'Product list',authData
+            message: `product list`,authData
         }
         )}
          

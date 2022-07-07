@@ -1,10 +1,6 @@
 const Customer =require('../model/customer')
 const bcrypt =require("bcrypt")
-
-
-
-
-
+const Product =require('../model/product')
 
 const postLogin = async (req, res, next) => { try {
     const { email, password } = req.body;
@@ -41,12 +37,12 @@ const postRegister = async (req, res, next) => {
         return res.status(400).json( {
             message: "Invalid Name or Password did not match",
         });}
-    const alreadyCustomer = await Users.find({ email: email });
+    const alreadyCustomer = await Customer.find({ email: email });
     if (alreadyCustomer.length > 0) {
         return res.status(400).json({ message: "Already registered user, login" });
     }
     const hashPass = await bcrypt.hash(password, 10);
-    const newUser = new Customer ({
+    const newCustomer = new Customer ({
         fname: req.body.fname,
         lname: req.body.lname,
         email: req.body.email,
@@ -62,10 +58,24 @@ const postRegister = async (req, res, next) => {
 };
 
 
+const getProducts = async (req, res, next) => {
+
+  try {
+    let productlist = await Product.find()
+   console.log(productlist)
+   res.json(productlist)
+   } catch (err) {
+     console.log(err.message)
+  }
+        
+  } ;
+
+
+
 
 module.exports = {
   
-   
+   getProducts,
     postLogin,
     postRegister,
    

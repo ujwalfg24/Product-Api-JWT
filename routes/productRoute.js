@@ -7,7 +7,7 @@ const upload = multer({ dest: 'uploads/' })
 const express = require('express')
 const router =express.Router()
 const productControllers =require('../controller/productControllers')
-const {verifyToken} =require('../controller/controllers')
+const {verifyToken} =require('../controller/admincontrollers')
 
 const {getProducts, createProduct, deleteProduct ,updateProduct,getProduct} =require('../controller/productControllers')
 
